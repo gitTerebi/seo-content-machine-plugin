@@ -1,0 +1,17 @@
+{
+  "name": "seo-content-machine",
+  "owner": {
+    "name": "SEO Content Machine",
+    "url": "https://seocontentmachine.com"
+  },
+  "metadata": {
+    "description": "Official Claude Code plugins for SEO Content Machine."
+  },
+  "plugins": [
+    {
+      "name": "seo-content-machine",
+      "source": "./",
+      "description": "Drive the SEO Content Machine desktop app from Claude Code: scraping, site crawls, Google Maps listings, archive.org downloads and SEO Workspace pages."
+    }
+  ]
+}
