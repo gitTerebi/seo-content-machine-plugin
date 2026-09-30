@@ -1,7 +1,7 @@
 {
   "name": "seo-content-machine",
   "displayName": "SEO Content Machine",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Drive the SEO Content Machine desktop app from Claude Code: scrape articles from search results, crawl sites, pull Google Maps listings, download archive.org pages and plan pages in an SEO Workspace. Needs SEO Content Machine running on the same machine (paid app, 14-day free trial).",
   "author": {
     "name": "SEO Content Machine",
@@ -19,5 +19,20 @@
     "local-seo",
     "wordpress",
     "seo-workspace"
-  ]
+  ],
+  "userConfig": {
+    "api_key": {
+      "type": "string",
+      "title": "SCM API key",
+      "description": "Only if you set one in SCM under Settings > App > Api secret key. Leave blank otherwise.",
+      "sensitive": true,
+      "default": ""
+    },
+    "api_url": {
+      "type": "string",
+      "title": "SCM API address",
+      "description": "Where SCM's API listens. Leave the default unless you changed SCM's port.",
+      "default": "http://localhost:8008"
+    }
+  }
 }

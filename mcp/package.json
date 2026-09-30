@@ -1,0 +1,37 @@
+{
+  "name": "seo-content-machine-mcp",
+  "version": "1.1.0",
+  "description": "MCP server for SEO Content Machine: run its scraping, crawling, Google Maps and SEO Workspace tasks from Claude Code, Codex or any MCP client.",
+  "mcpName": "com.seocontentmachine/scm",
+  "type": "module",
+  "bin": {
+    "seo-content-machine-mcp": "index.mjs"
+  },
+  "files": [
+    "index.mjs",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "seo",
+    "seo-content-machine",
+    "local-seo",
+    "claude",
+    "codex"
+  ],
+  "homepage": "https://seocontentmachine.com",
+  "author": "seocontentmachine.com",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitTerebi/seo-content-machine-plugin.git",
+    "directory": "mcp"
+  },
+  "bugs": {
+    "url": "https://github.com/gitTerebi/seo-content-machine-plugin/issues"
+  }
+}

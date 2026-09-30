@@ -9,7 +9,7 @@ SEO Content Machine (SCM) is a desktop app. Its MCP tools create and run tasks i
 
 ## Before the first call
 
-The app must be open. If a tool answers "Cannot reach SCM", ask the user to start SEO Content Machine and log in, then try again. Do not retry in a loop.
+The app must be open. If no SCM tools are available, or a tool answers "Cannot reach SCM", ask the user to start SEO Content Machine and log in. The tools appear on their own within a few seconds of SCM starting. Do not retry in a loop.
 
 Call `task_list` first in a new session. It shows the tasks that already exist and how busy the machine is.
 

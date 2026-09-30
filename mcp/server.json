@@ -1,0 +1,37 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.seocontentmachine/scm",
+  "title": "SEO Content Machine",
+  "description": "Run SEO Content Machine tasks from an MCP client: scraping, crawls, Google Maps, Workspace pages.",
+  "websiteUrl": "https://seocontentmachine.com",
+  "version": "1.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "seo-content-machine-mcp",
+      "version": "1.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "SCM_API_URL",
+          "description": "SCM API server address. Default http://localhost:8008",
+          "isRequired": false,
+          "isSecret": false
+        },
+        {
+          "name": "SCM_API_KEY",
+          "description": "The key from SCM Settings > App > Api secret key, if you set one",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/gitTerebi/seo-content-machine-plugin",
+    "source": "github",
+    "subfolder": "mcp"
+  }
+}
