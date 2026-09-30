@@ -34,5 +34,9 @@
       "description": "Where SCM's API listens. Leave the default unless you changed SCM's port.",
       "default": "http://localhost:8008"
     }
-  }
+  },
+  "privacyPolicyUrl": "https://seocontentmachine.com/privacy-policy/",
+  "termsOfServiceUrl": "https://seocontentmachine.com/terms-conditions/",
+  "supportUrl": "https://seocontentmachine.com/contact-us/",
+  "documentationUrl": "https://github.com/gitTerebi/seo-content-machine-plugin#readme"
 }
