@@ -34,6 +34,7 @@ Runs take from seconds to many minutes. Poll `task_get` every 20 to 60 seconds r
 | Specific values from pages (prices, schema, titles) into CSV | `dynamic_pages_create` |
 | Whole pages saved as cleaned article files, no browser | `static_pages_create` |
 | Every internal link on a site | `site_crawler_create` |
+| Search results (rank, URL, title) for a list of queries, as one CSV | `url_finder_create` |
 | A dead or old site rebuilt from archive.org | `web_archives_create` |
 | Businesses in a place, with ratings and reviews | `local_listings_create` |
 | A quick web search | `web_search` |

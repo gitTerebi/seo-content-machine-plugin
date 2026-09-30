@@ -42,6 +42,7 @@ If you set an API key in SCM (Settings > App > Api secret key), pass it as `SCM_
 | `dynamic_pages_create` | Extract values from rendered pages into CSV with CSS selectors |
 | `static_pages_create` | Fetch pages without a browser and save each as a cleaned article |
 | `site_crawler_create` | Crawl a site and save the links it finds |
+| `url_finder_create` | Search a list of queries and save every result to one CSV of query, rank, url and title |
 | `web_archives_create` | Download the newest archive.org copy of each page on a domain |
 | `local_listings_create` | Scrape Google Maps listings, such as "plumbers in denver" |
 | `workspace_pages_add`, `workspace_pages_update` | Add or edit pages in an SEO Workspace project |
