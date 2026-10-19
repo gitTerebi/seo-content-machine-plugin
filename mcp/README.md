@@ -2,7 +2,7 @@
 
 Connects Claude Code, Codex, Claude Desktop or any MCP client to [SEO Content Machine](https://seocontentmachine.com) (SCM), the desktop SEO workspace.
 
-Your assistant can then create and run SCM tasks and read their results: article scraping from search results, site crawls, Google Maps listings, archive.org downloads and SEO Workspace pages. The work runs inside the SCM app on your machine, with its own browser and task queue.
+Your assistant can then create and run SCM tasks and read their results: article scraping from search results, site crawls, search result lists, Google Maps listings, YouTube subtitles, archive.org downloads and SEO Workspace pages. The work runs inside the SCM app on your machine, with its own browser and task queue.
 
 ## Requirements
 
@@ -36,17 +36,23 @@ If you set an API key in SCM (Settings > App > Api secret key), pass it as `SCM_
 
 | Tool | What it does |
 | --- | --- |
-| `task_list`, `task_get`, `task_results` | List SCM tasks, read one with its log, read the rows of its last run |
-| `task_run`, `task_restart`, `task_cancel`, `task_delete` | Start, restart, stop or delete a task |
-| `page_pipeline_create` | Scrape articles from search results for a list of keywords |
+| `task_list`, `task_get`, `task_results` | List SCM tasks, read one with its log, read the result rows of its last run, which point to its output files |
+| `task_run`, `task_cancel`, `task_delete` | Start (or start over with `fromStart`), stop or delete a task |
+| `page_pipeline_upsert` | Create or change a Page Pipeline: AI pages from page templates, or articles scraped from search results, for a list of keywords |
 | `dynamic_pages_create` | Extract values from rendered pages into CSV with CSS selectors |
 | `static_pages_create` | Fetch pages without a browser and save each as a cleaned article |
 | `site_crawler_create` | Crawl a site and save the links it finds |
 | `url_finder_create` | Search a list of queries and save every result to one CSV of query, rank, url and title |
+| `youtube_subtitles_create` | Save the subtitles of YouTube videos, from video URLs or keyword searches |
 | `web_archives_create` | Download the newest archive.org copy of each page on a domain |
 | `local_listings_create` | Scrape Google Maps listings, such as "plumbers in denver" |
-| `workspace_pages_add`, `workspace_pages_update` | Add or edit pages in an SEO Workspace project |
-| `web_search`, `open_url`, `cdp_open` | Search the web, read a page, or drive a real browser |
+| `seo_workspace_create` | Create an empty SEO Workspace |
+| `workspace_query` | Read an SEO Workspace: its pages, site plan, brief, documents, crawl and Search Console data |
+| `workspace_write` | Add or update pages, the site plan, the brief or documents in an SEO Workspace, with undo in the app |
+| `workspace_create_pages` | Hand SEO Workspace pages to a Page Pipeline, which researches, writes and reviews each one as a draft |
+| `workspace_documents_edit` | Replace exact text in one SEO Workspace document |
+| `web_search`, `browser_open`, `cdp_open` | Search the web, read a page, or drive a real browser |
+| `render_pdf` | Print an HTML document to a PDF file |
 
 ## How it works
 
