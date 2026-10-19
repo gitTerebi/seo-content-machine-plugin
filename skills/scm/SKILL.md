@@ -19,10 +19,10 @@ Every `*_create` tool and `page_pipeline_upsert` only make a draft task. The pat
 
 1. Create it. The reply has the task id.
 2. Start it with `task_run` and that id.
-3. Check progress with `task_get`. Pass `include_logs: true` when a run looks stuck or failed.
+3. Check progress with `task_list` filtered by the task's `name`. It returns the status and run counts without the task's settings. Call `task_get` with `include_logs: true` only to read the log, once the run ends or when it looks stuck or failed, because `task_get` also returns every setting.
 4. Call `task_results`. Its rows point to what the run wrote: a file, files, a CSV or a sheet, and `run.output_folder` is the output folder. Read those files with your own file tools. A Maps CSV with review text is wide, so read only the columns you need.
 
-Runs take from seconds to many minutes. Poll `task_get` every 20 to 60 seconds rather than in a tight loop, and tell the user what is happening while you wait.
+Runs take from seconds to many minutes. Poll `task_list` every 20 to 60 seconds rather than in a tight loop, and tell the user what is happening while you wait.
 
 `task_run` resumes an unfinished run. `task_run` with `fromStart: true` starts over from the first input line. `task_cancel` stops a run.
 
