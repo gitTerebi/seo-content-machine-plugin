@@ -4,12 +4,14 @@ Lets Claude Code drive [SEO Content Machine](https://seocontentmachine.com) (SCM
 
 - scrape articles from search results for a keyword list
 - crawl a site and list its internal links
+- list the search results for a set of queries
 - pull Google Maps listings with ratings and reviews
+- save the subtitles of YouTube videos
 - download archive.org copies of a site
 - extract values from pages into CSV
-- add and update pages in an SEO Workspace
+- plan pages in an SEO Workspace and have SCM research, write and review them
 
-The plugin adds SCM's MCP server and a skill that shows Claude how to use it.
+The plugin adds SCM's MCP server and two skills: `scm`, which shows Claude how to use the tools, and `local-seo`, which plans and writes local service pages for every service in every town a business covers.
 
 ## Requirements
 
@@ -39,6 +41,7 @@ Open SCM, then ask Claude Code for the job, for example:
 - "Use SCM to find dentists in Austin TX with at least 4 stars"
 - "Crawl example.com with SCM and tell me which pages have no internal links"
 - "Add these 10 page ideas to my SEO Workspace"
+- "Use the local-seo skill to plan service pages for my plumbing business in Austin and its suburbs"
 
 ## What the plugin runs and sends
 
