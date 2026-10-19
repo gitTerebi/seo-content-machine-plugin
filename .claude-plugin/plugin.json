@@ -1,7 +1,7 @@
 {
   "name": "seo-content-machine",
   "displayName": "SEO Content Machine",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Drive the SEO Content Machine desktop app from Claude Code: scrape articles from search results, crawl sites, pull Google Maps listings, download archive.org pages and plan pages in an SEO Workspace. Needs SEO Content Machine running on the same machine (paid app, 14-day free trial).",
   "author": {
     "name": "SEO Content Machine",

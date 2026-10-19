@@ -24,14 +24,14 @@ The writer may claim only what the brief says about the business, so a missing f
 1. Call `local_listings_create` with one line such as "plumbers in austin tx", `resultsLimit` 15, `reviewCount` 3 and `uniqueDomain` true. Then `task_run` it.
 2. Poll `task_get` every 30 seconds. A run takes about a minute.
 3. Call `task_results`. Its rows point to a CSV file. Read that file with your own file tool.
-4. Count the `reviewTags` across the places. The tags that repeat are the jobs customers book.
+4. Group the `reviewTags` by job, then count how many places each job appears at. Tags name one job in many ways ("ev charger", "electric car charger installation", "charging"), so an exact count undercounts it. Drop tags that name no job, such as "punctuality", "fair pricing" or "clean".
 
-Show the user the repeated tags next to their services, and agree the service list. Leave out a service they do not offer, however often it appears.
+Show the user the jobs and their counts next to their services, and agree the service list. Leave out a service they do not offer, however often it appears. A service they offer with no matching tag can stay, because customers rarely tag routine work.
 
 ## 3. Plan the Workspace
 
 1. Create the Workspace with `seo_workspace_create`.
-2. Fill the brief with `workspace_write` (`brief`, `updateOne`): `businessName`, `targetSite`, `geo` with the towns, `articleGoogleCountry` such as "United States:English", and `notes` with every fact from step 1.
+2. Fill the brief with `workspace_write` (`brief`, `updateOne`): `businessName`, `targetSite`, `geo` with the main city and the towns, `articleGoogleCountry` such as "United States:English", and `notes` with every fact from step 1. Always set `articleGoogleCountry`, because a new Workspace starts with the user's saved region, which may be another country, and the pages are researched and written for that region.
 3. Show the user the plan as a table of services by towns, with the page count, and get a yes before you write any pages.
 4. Insert the pages with `workspace_write` (`pages`, `insertMany`), with `intent` "local" and `status` "planned":
    - One hub per service, topic "<service> <main city>", `templateType` "Local SEO Hub".
@@ -43,16 +43,17 @@ Show the user the repeated tags next to their services, and agree the service li
 1. Pick one hub and two of its town pages. Pass their page ids to `workspace_create_pages` with `run` false.
 2. Set the model on the pipeline it returns with `page_pipeline_upsert`: the AI service the user runs in SCM, and effort "medium" or higher. On low effort the writer stops researching the town, and the page turns generic.
 3. Start it with `task_run` and poll `task_get` every minute. A batch of three takes about 5 to 10 minutes.
-4. Read the drafts with `workspace_query` on `documents`, and the log with `task_get` and `include_logs`. Each page logs a `Review scores:` line.
+4. Read the drafts with `workspace_query` on `documents`, with `fields` that include `body`, because the page text is left out otherwise. Read the log with `task_get` and `include_logs`.
+5. For each page, find two log lines. `Review scores:` gives the last reviewer's scores out of 10. `Review done with N rounds` gives the writer's last reply, with any blocking fails left open.
 
-Tell the user what each page found about its town, and ask them to open the drafts in the app.
+Tell the user what each page found about its town, and ask them to open the drafts in the app. When a page has blocking fails left open, it is still saved as a draft, so list those claims for the user to check or remove before publishing.
 
 ## 5. Write the rest
 
-Hand the remaining pages over in batches of 8 to 10, hubs first. A town page links only to pages already written, so a hub written later is missing from its town pages.
+Hand the remaining pages over in batches of 8 to 10. Each page links to its hub and its sibling towns by their site plan addresses, so the order does not matter.
 
 Each page uses roughly 75k to 300k tokens. On a subscription plan, spread a large site over several days.
 
 ## When a page comes out thin
 
-Some towns publish little, or hide their fees and rules in collapsed page sections and old reports, so their pages score lower whatever the effort. Tell the user which towns these are. They can add what they know about the town to the brief, or skip the town.
+Some towns publish little, hide their fees and rules in collapsed page sections and old reports, or block SCM's browser, so their pages score lower whatever the effort. Tell the user which towns these are. They can add what they know about the town to the brief, or skip the town.
