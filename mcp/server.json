@@ -4,12 +4,12 @@
   "title": "SEO Content Machine",
   "description": "Run SEO Content Machine tasks from an MCP client: scraping, crawls, Google Maps, Workspace pages.",
   "websiteUrl": "https://seocontentmachine.com",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "seo-content-machine-mcp",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "transport": {
         "type": "stdio"
       },
