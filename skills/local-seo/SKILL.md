@@ -40,11 +40,10 @@ Show the user the jobs and their counts next to their services, and agree the se
 
 ## 4. Write a first batch
 
-1. Pick one hub and two of its town pages. Pass their page ids to `workspace_create_pages` with `run` false.
-2. Set the effort on the pipeline it returns with `page_pipeline_upsert`: send only `aiWriterServiceEffort`, "medium" or higher. SCM keeps the AI service and model the user last used, so leave them out. On low effort the writer stops researching the town, and the page turns generic.
-3. Start it with `task_run` and poll `task_list` with `seo_workspace_id` set to the Workspace id every minute until the pipeline's status is done. A batch of three takes about 5 to 10 minutes.
-4. Read the drafts with `workspace_query` on `documents`, with `fields` that include `body`, because the page text is left out otherwise. Read the log once with `task_get` and `include_logs`.
-5. For each page, find two log lines. `Review scores:` gives the last reviewer's scores out of 10. `Review done with N rounds` gives the writer's last reply, with any blocking fails left open.
+1. Pick one hub and two of its town pages. Pass their page ids to `workspace_create_pages`. SCM writes them with the AI model and effort the user last picked in the app.
+2. Poll `task_list` with `seo_workspace_id` set to the Workspace id every minute until the pipeline's status is done. A batch of three takes about 5 to 10 minutes.
+3. Read the drafts with `workspace_query` on `documents`, with `fields` that include `body`, because the page text is left out otherwise. Read the log once with `task_get` and `include_logs`.
+4. For each page, find two log lines. `Review scores:` gives the last reviewer's scores out of 10. `Review done with N rounds` gives the writer's last reply, with any blocking fails left open.
 
 Tell the user what each page found about its town, and ask them to open the drafts in the app. When a page has blocking fails left open, it is still saved as a draft, so list those claims for the user to check or remove before publishing.
 
