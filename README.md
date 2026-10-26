@@ -20,12 +20,20 @@ The plugin adds SCM's MCP server and two skills: `scm`, which shows Claude how t
 
 ## Install
 
-In Claude Code:
+In Claude Code, type one line:
+
+```
+/plugin install seo-content-machine --marketplace gitTerebi/seo-content-machine-plugin
+```
+
+Claude Code shows the source and asks once before it adds the marketplace. On Claude Code older than 2.1.275, use the two-step form:
 
 ```
 /plugin marketplace add gitTerebi/seo-content-machine-plugin
 /plugin install seo-content-machine@seo-content-machine
 ```
+
+From a terminal, the same install is `claude plugin install seo-content-machine --marketplace gitTerebi/seo-content-machine-plugin`.
 
 The plugin works with SCM's default settings. It has two optional settings, which you can change in `/config`:
 
