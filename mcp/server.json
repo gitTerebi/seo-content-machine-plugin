@@ -3,7 +3,7 @@
   "name": "com.seocontentmachine/scm",
   "title": "SEO Content Machine",
   "description": "Run SEO Content Machine tasks from an MCP client: scraping, crawls, Google Maps, Workspace pages.",
-  "websiteUrl": "https://seocontentmachine.com",
+  "websiteUrl": "https://seocontentmachine.com/?utm_source=npm-mcp&utm_medium=mcp&utm_campaign=mcp-registry&utm_content=website",
   "version": "1.1.1",
   "packages": [
     {

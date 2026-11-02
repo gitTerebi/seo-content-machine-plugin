@@ -1,6 +1,6 @@
 # SEO Content Machine plugin for Claude Code
 
-Lets Claude Code drive [SEO Content Machine](https://seocontentmachine.com) (SCM), the desktop SEO workspace. Claude can create and run SCM tasks and read their results:
+Lets Claude Code drive [SEO Content Machine](https://seocontentmachine.com/?utm_source=npm-mcp&utm_medium=mcp&utm_campaign=github&utm_content=readme) (SCM), the desktop SEO workspace. Claude can create and run SCM tasks and read their results:
 
 - scrape articles from search results for a keyword list
 - crawl a site and list its internal links
@@ -15,7 +15,7 @@ The plugin adds SCM's MCP server and two skills: `scm`, which shows Claude how t
 
 ## Requirements
 
-- SEO Content Machine running on the same machine, on Windows, Mac or Linux. SCM is a paid app with a [14-day free trial](https://seocontentmachine.com/members/signup/trial), no card needed.
+- SEO Content Machine running on the same machine, on Windows, Mac or Linux. SCM is a paid app with a [14-day free trial](https://seocontentmachine.com/members/signup/trial?utm_source=npm-mcp&utm_medium=mcp&utm_campaign=github&utm_content=readme_trial), no card needed.
 - Node.js 18 or newer.
 
 ## Install

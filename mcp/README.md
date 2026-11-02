@@ -1,12 +1,12 @@
 # SEO Content Machine MCP server
 
-Connects Claude Code, Codex, Claude Desktop or any MCP client to [SEO Content Machine](https://seocontentmachine.com) (SCM), the desktop SEO workspace.
+Connects Claude Code, Codex, Claude Desktop or any MCP client to [SEO Content Machine](https://seocontentmachine.com/?utm_source=npm-mcp&utm_medium=mcp&utm_campaign=npm&utm_content=readme) (SCM), the desktop SEO workspace.
 
 Your assistant can then create and run SCM tasks and read their results: article scraping from search results, site crawls, search result lists, Google Maps listings, YouTube subtitles, archive.org downloads and SEO Workspace pages. The work runs inside the SCM app on your machine, with its own browser and task queue.
 
 ## Requirements
 
-- SEO Content Machine running on the same machine, on Windows, Mac or Linux. There is a [14-day free trial](https://seocontentmachine.com/members/signup/trial), no card needed.
+- SEO Content Machine running on the same machine, on Windows, Mac or Linux. There is a [14-day free trial](https://seocontentmachine.com/members/signup/trial?utm_source=npm-mcp&utm_medium=mcp&utm_campaign=npm&utm_content=readme_trial), no card needed.
 - Node.js 18 or newer.
 
 ## Setup
